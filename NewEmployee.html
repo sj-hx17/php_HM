@@ -1,0 +1,73 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <title>Email Verification</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h5>Signup form</h5>
+        <form action="" method="post">
+          <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="fas fa-user"> </i> </span>
+            <input type="text" name="name" id="name" class="form-control" placeholder="Enter your Name" autocomplete="off"/>
+          </div>
+
+          <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="fas fa-phone"> </i> </span>
+            <input type="number" name="phone" id="phone" class="form-control" placeholder="Enter Phone Number" autocomplete="off"/>
+          </div>
+
+          <div class="mb-3 input-group">
+            <span class="input-group-text"
+              ><i class="fas fa-envelope"> </i>
+            </span>
+            <input type="text" name="email" id="email" class="form-control" placeholder="Enter Email" autocomplete="off"/>
+          </div>
+
+          <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="fas fa-lock"> </i> </span>
+            <input type="password" name="password" id="password" class="form-contro
+            l" placeholder="Enter Password" autocomplete="off"/>
+          </div>
+
+          <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="fas fa-lock"> </i> </span>
+            <input type="text" name="shift" id="shift" class="form-control" placeholder="Choose Shift" autocomplete="off"/>
+          </div>
+
+          <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="fas fa-lock"> </i> </span>
+            <input type="text" name="role" id="role" class="form-control" placeholder="Choose Role" autocomplete="off"/>
+          </div>
+
+          <div class="mb-3 input-group">
+            <input type="text" name="otp" id="otp" class="form-control" />
+            <input type="text" name="subject" id="subject" class="form-control" value="Received OTP"/>
+          </div>
+
+          <a button href="verify.html" type="submit" name="send" class="btn btn-primary w-100">Sign Up <i class="fas fa-arrow-right"> </i></a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  function generateRandomNumber() {
+    let min = 100000;
+    let max = 999999;
+    let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    let lastGeneratedNumber = localStorage.getItem("lastGeneratedNumber");
+    while (randomNumber === parseInt(lastGeneratedNumber)) {
+      randomNumber = Math.floor(Math.random() * ma(max - min + 1)) + min;
+    }
+
+    localStorage.setItem("lastGeneratedNumber", randomNumber);
+    return randomNumber;
+  }
+  document.getElementById("otp").value = generateRandomNumber();
+</script>

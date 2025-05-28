@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8;
+}
+
+.room {
+    transition: all 0.3s ease;
+}
+
+.room:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.needs-cleaning {
+    background-color: #f59e0b;
+    color: white;
+}
+
+.cleaned {
+    background-color: #10b981;
+    cursor: not-allowed;
+    color: white;
+}
+
+.modal {
+    transition: opacity 0.3s ease;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+}
+
+.progress-ring__circle {
+    stroke-dasharray: 251.2;
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.table-row-hover:hover {
+    background-color: #f3f4f6;
+}
